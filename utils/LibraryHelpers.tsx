@@ -51,8 +51,10 @@ export const launchGallery = async (): Promise<any> => {
 
 
 export const resetAndNavigate = (newPath: Href<string | object>) => {
-    if (router.canGoBack()) {
+    //if the user can go back, dismiss all screens clear the stack  and navigate to the new path 
+    if (router.canGoBack()) {  
         router.dismissAll();
     }
+    //replace the current screen with the new path and make this scrren a index 0
     router.replace(newPath);
 }
